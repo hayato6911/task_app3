@@ -1,0 +1,25 @@
+<h2>予約済みルーム一覧</h2>
+
+<table>
+      <thead>
+        <tr>
+          <th>部屋番号</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>人数</th>
+        </tr>
+      </thead>
+ 
+      <tbody>
+       <% @resevations.each do |resevation| %>
+         <tr>
+           <td><%= resevation.id %></td>
+           <td><%= resevation.start_day %></td>
+           <td><%= resevation.end_day %></td>
+           <td><%= resevation.number_of_people %></td>
+           <td class="romma"><%= link_to "削除", resevation, method: :delete, data: { confirm: "本当に削除しますか？" } %> </td>
+         </tr>
+       <% end %>
+      </tbody>
+    </table>
+ 

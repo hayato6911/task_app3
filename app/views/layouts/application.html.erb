@@ -10,6 +10,56 @@
   </head>
 
   <body>
+    
+<header class="header">
+  <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" /></a>
+  <form action="" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア" />
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード" />
+          <i class="fas fa-search"></i>
+        </div>
+  </form>
+  </div>
+  <div class="header-right-nav">
+        <% if user_signed_in? %>
+      <div class="nav-item d-sm-inline-block d-none">ユーザー名：<%= current_user.username %></div>
+      <div class="menu">
+      <div class="menu-title">メニュー</div>
+      <div class="sub-menu">
+        <ul>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %></li>
+          <li><%= link_to "マイページ", new_user_session_path, class: "button is-warning is-light" %></li>
+          <li class="room"><%= link_to "ルーム登録", :new_room %></li>
+          <li><%= link_to '登録済みルーム一覧', rooms_path %></il>
+          <li><%= link_to "予約済みルーム一覧", resevations_path %></li>
+        </ul>
+      </div>
+    </div>
+    <% else %>
+     <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+     <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+    <% end %>
+  </div>
+</header>
+    
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    
+    
     <%= yield %>
   </body>
 </html>

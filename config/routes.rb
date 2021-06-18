@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'resevations/index'
+  get 'room/index'
+  get 'users/show'
+  get 'users/edit'
+  devise_for :users
+  root to: "home#index"
+  resources :users
+  resources :rooms
+  get 'rooms/index'
+  resources :rooms
+  resources :resevations
 end

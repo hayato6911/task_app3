@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*ヘッダー部分のcss*/
+.abc{
+  margin: 90px 479px;
+}
+
+.header{
+  width: 100%;
+  height: 70px;
+  padding: 4px 30px;
+  background-color: green;
+  margin: -8px 0px -16px -9px ;
+}
+
+.header-left-nav form {
+    display: inline-block;
+}
+
+.header-left-nav {
+    display: inline-flex;
+}
+
+
+.menu {
+  width: 200px;
+  text-align: center;
+  background: navy;
+  color: white;
+  margin-right: 160px;
+  margin: 18px 110px;
+}
+
+.sub-menu {
+  background: white;
+  display: none;
+}
+
+li{
+  border: 1px solid navy;
+}
+
+ul {
+  width: 300px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: navy;
+}
+
+.menu:hover .sub-menu {
+  display: block;
+}
+
+.header-right-nav {
+    float: right;
+    margin: 20px 100px;
+}
+
+.nav-item{
+  font-size:17px;
+  margin: -15px 110px;
+}
+
+.top{
+    background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+    background-size: cover;
+    width: 103%;
+    height: 650px;
+    margin-left: -8px;
+}
+
+.notice{
+  background-color: orange;
+  width: 1300px;
+  height: 30px;
+  margin-bottom: -16px;
+  margin-left: -9px;
+}
+
+.is-light{
+  color:black;
+  font-size: 18px;
+}
+
+/*ここからマイページのcss*/
+
+.box-inner{
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 30px auto;
+}
+
+.box-data{
+   border-bottom: 1px solid #eaedef;
+   padding: 20px;
+   margin: 0 15px;
+   font-size: 16px;
+}
+
+.box-data1{
+   border-bottom: 3px solid black;
+   padding: 20px;
+   margin: 0 23px;
+}
+
+.account-name{
+  padding-left:10px;
+}
+
+/*ここからルーム登録のcss*/
+
+.new_room{
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+
+#room_room_name{
+  width:100%;
+  height: 38px;
+  margin-left: 30px;
+}
+
+#room_introduction{
+  width: 625px;
+  height: 134px;
+  margin-left: 30px;
+}
+
+#room_price{
+  width:100%;
+  height: 38px;
+  margin-left: 30px;
+}
+
+#room_address{
+  width:100%;
+  height: 38px;
+  margin-left: 30px;
+}
+
+#room_room_image{
+  margin-left: 30px;
+}
+
+.room_room_touroku{
+  margin-top: 50px;
+  margin-left: 21px;
+  width: 300px;
+}
