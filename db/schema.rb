@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_06_21_152920) do
     t.string "number_of_people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.integer "room_id"
     t.integer "n1_price"
     t.string "room_image"
