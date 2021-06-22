@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_191650) do
+ActiveRecord::Schema.define(version: 2021_06_21_152920) do
 
   create_table "resevations", force: :cascade do |t|
     t.string "start_day"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2021_06_16_191650) do
     t.string "number_of_people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "room_id"
+    t.integer "n1_price"
+    t.string "room_image"
+    t.string "room_name"
+    t.integer "total_price"
+    t.string "password_digest"
+    t.string "authenticate_user"
+    t.string "price"
+    t.string "introduction"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -42,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_191650) do
     t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

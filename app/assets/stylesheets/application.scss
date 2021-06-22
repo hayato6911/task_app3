@@ -29,6 +29,7 @@
 
 .header-left-nav form {
     display: inline-block;
+    margin-top: 21px;
 }
 
 .header-left-nav {
@@ -86,6 +87,7 @@ a {
     width: 103%;
     height: 650px;
     margin-left: -8px;
+    margin-top: 16px;
 }
 
 .notice{
@@ -168,4 +170,28 @@ a {
   margin-top: 50px;
   margin-left: 21px;
   width: 300px;
+}
+/*フッター*/
+.footer {
+    bottom: 0;
+    width: 1280px;
+    height: 180px;
+    padding-top: 90px;
+    background-color: green;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+    margin-left: -8px;
+    margin-bottom: -9px;
+}
+/*アイコン*/
+.icon_imagea{
+  width:240px;
+  height:200px;
+}
+
+.icon_image{
+  width:240px;
+  height:200px;
+  margin-top: 30px;
 }

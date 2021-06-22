@@ -1,33 +1,47 @@
+<h1>確認一覧</h1>
+ 
+ <table>
+      <tr>
+        <th>部屋番号</th>
+        <td><%= @room.id %></td>
+      </tr>
+      <tr>
+        <th>ルーム画像</th>
+        <td><img src=<%= @room.room_image %> class = "icon_imagea"></td>
+      </tr>
+      <tr>
+        <th>料金</th>
+        <td><%= @room.price %></td>
+      </tr>
+      <tr>
+        <th>ルーム紹介</th>
+        <td><%= @room.introduction %></td>
+      </tr>
+</table>
+ 
+ <h4>予約する</h4>
+  <%= form_for @resevation do |f| %>
 
-          <div class="room-box">
-             <p class="room-name"><%= @room.room_name %></p>
-             <p class="room-adress"><%= @room.adress %></p>
-             <p class="room-introduction"><%= @room.introduction %></p>
-          </div>
-        </div>
-         <div class="room-show-container">
-            <p class="price">¥<%= @room.price %>/日</p>
-           <%= form_tag("/reservations/new",method: :get) do%>
-           <div class="room-forms">
-            <p class="show-text">開始日</p>
-            <input class="room-form" type="date" name="start_date">
-            <p class="show-text">終了日</p>
-            <input class="room-form" type="date" name="end_date">
-            <p class="show-text">人数</p>
-            <input class="room-form" type="number" name="group">
-            <input type="hidden" name="room_id" value="<%= @room.id %>">
-             <input type="hidden" name="n1_price" value="<%= @room.price %>">
-            <input type="hidden" name="room_name" value="<%= @room.room_name %>">
-            <input class="room-btn" type="submit" value="予約">
-           </div>
-           <%end%>
-    </div>
-    </div>
-     <div class="room-link">
-      <%if @current_user.id == @room.user_id%>
-            <%= link_to "ルーム情報を変更する","/rooms/#{@room.id}/edit" %>
-      <%end%>
-       <%= link_to "掲載中の部屋一覧","/users/#{@current_user.id}" %>
-        <%= link_to "ルーム情報を変更する","/rooms/#{@room.id}/edit" %>
-        </div>
-    </div>
+      <div class="field form-row">
+      
+        <%= f.label :start_day, "開始日" %>
+        <%= f.date_field :start_day, class: 'form-control mb-4' %>
+      </div>
+
+      <div class="field form-row">
+        <%= f.label :end_day, "終了日" %>
+        <%= f.date_field :end_day, class: 'form-control mb-4' %>
+      </div>
+
+      <div class="field form-row">
+        <%= f.label :number_of_people, "人数" %>
+        <%= f.number_field :number_of_people, class: 'form-control mb-4' %>
+      </div>
+      
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <%= f.hidden_field :price, value: @room.price%>
+   
+      <div class="actions">
+        <%= f.submit "予約する", class: 'form-control btn-primary mb-4' %>   
+      </div>
+  <% end %>

@@ -1,23 +1,23 @@
-<div class="box">
-  <div class="box-inner">
-    <div class="box-title">
-      <h2 class="box-data1">アカウント</h2>
-    </div>  
-    
-    <div class="box-data">
-     <div class="account-name">メールアドレス <%= @user.email %></div>
-    </div>
-    <div class="box-data">
-     <div class="account-name">ユーザ名  <%= @user.username %></div>
-    </div>
-    
-    <div class="box-data">
-    <td>プロフィール画像<img src=<%= @user.profile_image_id %> class = "icon_image"></td>
-    </div>
-    
-    <div class="box-data">
-      <%= link_to "編集", edit_user_registration_path %></br>
-      <%= link_to "TOP", root_path %> 
-    </div>    
+<div class="ww">
+<table>
+      <tr>
+        <th>プロフィール画像</th>
+        <td><img src=<%= @user.profile_image_id %> class = "icon_image"></td>
+      </tr>
+      <tr>
+        <th>自己紹介</th>
+        <td><%= @user.profile %></td>
+      </tr>
+      <tr>
+        <th>名前</th>
+        <td><%= @user.username %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+</table>
+ <div class="room_a">
+   <div class="btn btn--orange btn--radius"><%= link_to "ルーム登録", :new_room %></div>
  </div>
 </div>

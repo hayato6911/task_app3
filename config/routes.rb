@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   get 'resevations/index'
-  get 'room/index'
+  get 'resevations/posts'
+  resources :resevations
+  
+  get 'rooms/index'
+  get 'rooms/posts'
+  resources :rooms
+  
   get 'users/show'
-  get 'users/edit'
   devise_for :users
   root to: "home#index"
-  resources :users
-  resources :rooms
-  get 'rooms/index'
-  resources :rooms
-  resources :resevations
+  devise_for :rooms
+  
+  resources :users, :only => [:show]
 end

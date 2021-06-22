@@ -16,14 +16,14 @@
    <tbody>
      <% @rooms.each do |room| %>
       <tr>
-        <td class="romm"><%= room.id%></td>
-        <td class="romm"><img src=<%= room.room_image %> class = "icon_image"></td>
+        <td class="romm"><%= room.id %></td>
+        <td class="romm"><img src=<%= room.room_image %> class = "icon_imagea"></td>
         <td class="romm"><%= room.room_name %></td>
         <td class="romm"><%= room.introduction %></td>
         <td class="romm"><%= room.price %></td>
         <td class="romm"><%= room.address %></td>
-        <td class="rommb"><%= link_to "予約はこちらから", room %>
-        <td class="romma"><%= link_to "削除はこちらから", room, method: :delete, data: { confirm: "本当に削除しますか？" } %> </td>
+        <td class="rommb"><%= link_to "予約しますか？", room %>
+        <td class="romma"><%= link_to "削除しますか？", room, method: :delete, data: { confirm: "本当に削除しますか？" } %> </td>
       </tr>
     <% end %>
    </tbody>

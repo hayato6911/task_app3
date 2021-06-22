@@ -1,11 +1,10 @@
-<h2>ルーム新規登録画面</h2>
-<%= form_for @room do |f| %>
+<h1>ルーム情報登録</h1>
+
+ <%= form_for @room do |f| %>
   <table>
     <tr>
-      <div class="room">
       <th><%= f.label :room_name ,'ルーム名' %></th>
       <td><%= f.text_field :room_name, placeholder: 'ルーム名を入力' %></td>
-      </div>
     </tr>
     <tr>
       <th><%= f.label :introduction ,'ルーム紹介' %></th>
@@ -13,7 +12,7 @@
     </tr>
     <tr>
       <th><%= f.label :price ,'料金' %></th>
-      <td><%= f.number_field :price,placeholder: '１日あたりの料金を入力' %></td>
+      <td><%= f.number_field :price,placeholder: '料金を入力' %></td>
     </tr>
     <tr>
       <th><%= f.label :address ,'住所' %></th>
@@ -24,8 +23,7 @@
       <td><%= f.file_field :room_image, placeholder: 'ルーム画像を入力' %></td>
     </tr>
   </table>
-  
   <div>
-    <%= f.submit '登録',class: "room_room_touroku" %>
+    <%= f.submit '登録完了する' %>
   </div>
 <% end %>
