@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_152920) do
+ActiveRecord::Schema.define(version: 2021_06_23_070344) do
 
   create_table "resevations", force: :cascade do |t|
     t.string "start_day"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_152920) do
     t.string "authenticate_user"
     t.string "price"
     t.string "introduction"
+    t.string "user_id"
   end
 
   create_table "rooms", force: :cascade do |t|

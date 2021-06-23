@@ -45271,3 +45271,376 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 238ms (Views: 230.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 126.53.9.87 at 2021-06-23 06:51:49 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 281ms (Views: 269.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 126.53.9.87 at 2021-06-23 06:51:54 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 84ms (Views: 71.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 126.53.9.87 at 2021-06-23 06:52:16 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Ew5LFanzH4QagCOYecgdUtMda8arw/E92IYiiLyNs08xgzRQZJKWo8hGHnLpTc7VgOkD1Gja/Np3GeJLmV+7g==", "user"=>{"profile_image_id"=>#<ActionDispatch::Http::UploadedFile:0x00007fe78c0e2358 @tempfile=#<Tempfile:/tmp/RackMultipart20210623-6453-1k5hdgn.jpeg>, @original_filename="sky_00010.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image_id]\"; filename=\"sky_00010.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "username"=>"llll", "email"=>"6911@yahoo.co.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新しいアカウントを作成"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "6911@yahoo.co.jp"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "profile_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "6911@yahoo.co.jp"], ["encrypted_password", "$2a$12$PeVOZzxJNJ9/2GbQjNYKK.biymn92oJgsCY66WKQ2KsRL6dlM0FEO"], ["username", "llll"], ["profile_image_id", "sky_00010.jpeg"], ["created_at", "2021-06-23 06:52:16.919361"], ["updated_at", "2021-06-23 06:52:16.919361"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/users/1
+Completed 302 Found in 350ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/users/1" for 126.53.9.87 at 2021-06-23 06:52:17 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 126.53.9.87 at 2021-06-23 06:54:28 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rooms/new" for 126.53.9.87 at 2021-06-23 06:54:58 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#new as HTML
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 126.53.9.87 at 2021-06-23 06:55:00 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/users/1
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 126.53.9.87 at 2021-06-23 06:55:00 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 126.53.9.87 at 2021-06-23 06:55:04 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cs2q+lNoPgL3rT37BSdOSDJovP1In3GT7iiK7GpxOhjjNt/Zipd8uulY0P9k0kuswxwdLnyTW+3QRPVd8/P+oA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/
+Completed 302 Found in 15ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.53.9.87 at 2021-06-23 06:55:04 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 126.53.9.87 at 2021-06-23 06:55:09 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 126.53.9.87 at 2021-06-23 06:55:19 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 126.53.9.87 at 2021-06-23 06:55:29 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/gYMyaIox23xpvnMYLa3k6bh2mewdV3ZS93zEa6+f7D9XgjEwx1X/DDMbrzDT+75eYYwlpZxmrWiv+Jhw32DCg==", "user"=>{"username"=>"@yahoo.co.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/gYMyaIox23xpvnMYLa3k6bh2mewdV3ZS93zEa6+f7D9XgjEwx1X/DDMbrzDT+75eYYwlpZxmrWiv+Jhw32DCg==", "user"=>{"username"=>"@yahoo.co.jp", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :username
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 342ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 126.53.9.87 at 2021-06-23 06:55:34 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 126.53.9.87 at 2021-06-23 06:57:43 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 262ms (Views: 253.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 126.53.9.87 at 2021-06-23 06:57:45 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 69ms (Views: 57.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 126.53.9.87 at 2021-06-23 06:58:54 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l7xHVKuU1o7X0vSCwGCq4wjWmoetJx1urztQLLadYiSnYk3SMcR8AzEfLJojjnjb2vicgzVmSlwKxMXradUd8A==", "user"=>{"profile_image_id"=>#<ActionDispatch::Http::UploadedFile:0x00007fb8681442e0 @tempfile=#<Tempfile:/tmp/RackMultipart20210623-6900-4cb0di.jpeg>, @original_filename="sky_00010.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image_id]\"; filename=\"sky_00010.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "username"=>"gg", "email"=>"gg@yahoo.co.jp", "profile"=>"こんにちは", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新しいアカウントを作成"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gg@yahoo.co.jp"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "profile", "profile_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "gg@yahoo.co.jp"], ["encrypted_password", "$2a$12$xL5eCNYzsk8zR8lS0n4fhuYzkT2OM.fg2X.RwLWriUZ8.BNR7UW8u"], ["username", "gg"], ["profile", "こんにちは"], ["profile_image_id", "sky_00010.jpeg"], ["created_at", "2021-06-23 06:58:55.065785"], ["updated_at", "2021-06-23 06:58:55.065785"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/users/2
+Completed 302 Found in 333ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/users/2" for 126.53.9.87 at 2021-06-23 06:58:55 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 44ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/new" for 126.53.9.87 at 2021-06-23 06:59:30 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#new as HTML
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 49ms (Views: 40.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rooms" for 126.53.9.87 at 2021-06-23 06:59:56 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TJF3Wm4x3pBSfAwlNHnzVbUUzVZCnwEtKnp6+gcCsY0gq+g8Bey2FitRgA9QGhn/W41pqM76Ddr69DjgsXDuXw==", "room"=>{"room_name"=>"自宅", "introduction"=>"ああ", "price"=>"44", "address"=>"1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x0000000004450250 @tempfile=#<Tempfile:/tmp/RackMultipart20210623-6900-61ix0.jpeg>, @original_filename="room.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"room.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"登録完了する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:18
+  [1m[36mRoom Create (1.6ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "introduction", "price", "address", "room_image", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "自宅"], ["introduction", "ああ"], ["price", "44"], ["address", "1"], ["room_image", "room.jpeg"], ["created_at", "2021-06-23 06:59:56.204943"], ["updated_at", "2021-06-23 06:59:56.204943"], ["user_id", "2"]]
+  ↳ app/controllers/rooms_controller.rb:18
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:18
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/rooms/posts
+Completed 302 Found in 22ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/rooms/posts" for 126.53.9.87 at 2021-06-23 06:59:56 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#posts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23
+  Rendering rooms/posts.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", "2"]]
+  ↳ app/views/rooms/posts.html.erb:17
+  Rendered rooms/posts.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 52ms (Views: 40.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rooms/1" for 126.53.9.87 at 2021-06-23 06:59:59 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:27
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 59ms (Views: 39.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/resevations" for 126.53.9.87 at 2021-06-23 07:00:07 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResevationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uBT6nIjTtcKenSTIB5+VT2B21ts8M+bVCasUV2qyFNlegvjmka0zITFR8yCvPNCYBscHJvG7+OSeRMGPj146MA==", "resevation"=>{"start_day"=>"2021-07-02", "end_day"=>"2021-07-07", "number_of_people"=>"1", "room_id"=>"1", "price"=>"44"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resevations_controller.rb:18
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `user_id=' for #<Resevation:0x00007fb87435c9e0>
+Did you mean?  user=):
+  
+app/controllers/resevations_controller.rb:18:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResevations (20210623070344)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "resevations" ADD "user_id" varchar[0m
+  ↳ db/migrate/20210623070344_add_user_id_to_resevations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210623070344"]]
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 126.53.9.87 at 2021-06-23 07:04:47 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 338ms (Views: 324.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rooms/posts" for 126.53.9.87 at 2021-06-23 07:04:51 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23
+  Rendering rooms/posts.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ?[0m  [["user_id", "2"]]
+  ↳ app/views/rooms/posts.html.erb:17
+  Rendered rooms/posts.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 72ms (Views: 57.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms/1" for 126.53.9.87 at 2021-06-23 07:04:53 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:27
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (11.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 85ms (Views: 50.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/resevations" for 126.53.9.87 at 2021-06-23 07:05:00 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResevationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nfAq7vSL7AJdCI9nPze/4S9ij/ryxpNvE3UYeTfPLMt7ZiiU7fVq4fLEWI+XlPo2SdNeBz9OjV6Ems2h0iMCIg==", "resevation"=>{"start_day"=>"2021-06-24", "end_day"=>"2021-06-25", "number_of_people"=>"1", "room_id"=>"1", "price"=>"44"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resevations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/resevations_controller.rb:19
+  [1m[36mResevation Create (1.9ms)[0m  [1m[32mINSERT INTO "resevations" ("start_day", "end_day", "number_of_people", "created_at", "updated_at", "room_id", "price", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_day", "2021-06-24"], ["end_day", "2021-06-25"], ["number_of_people", "1"], ["created_at", "2021-06-23 07:05:00.180374"], ["updated_at", "2021-06-23 07:05:00.180374"], ["room_id", 1], ["price", "44"], ["user_id", "2"]]
+  ↳ app/controllers/resevations_controller.rb:19
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/resevations_controller.rb:19
+Redirected to https://1db4b3c6653c4cabaa127043b9514703.vfs.cloud9.us-east-1.amazonaws.com/resevations/posts
+Completed 302 Found in 24ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/resevations/posts" for 126.53.9.87 at 2021-06-23 07:05:00 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResevationsController#posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/resevations_controller.rb:30
+  Rendering resevations/posts.html.erb within layouts/application
+  [1m[36mResevation Load (0.2ms)[0m  [1m[34mSELECT "resevations".* FROM "resevations" WHERE "resevations"."user_id" = ?[0m  [["user_id", "2"]]
+  ↳ app/views/resevations/posts.html.erb:17
+  Rendered resevations/posts.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 63ms (Views: 55.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/resevations/1" for 126.53.9.87 at 2021-06-23 07:05:03 +0000
+Cannot render console from 126.53.9.87! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResevationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResevation Load (0.2ms)[0m  [1m[34mSELECT  "resevations".* FROM "resevations" WHERE "resevations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/resevations_controller.rb:24
+  Rendering resevations/show.html.erb within layouts/application
+  Rendered resevations/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
