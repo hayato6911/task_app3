@@ -1,0 +1,23 @@
+<div class="ww">
+<table>
+      <tr>
+        <th>プロフィール画像</th>
+        <td><img src=<%= @user.profile_image_id %> class = "icon_image"></td>
+      </tr>
+      <tr>
+        <th>自己紹介</th>
+        <td><%= @user.profile %></td>
+      </tr>
+      <tr>
+        <th>名前</th>
+        <td><%= @user.username %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+</table>
+ <div class="room_a">
+   <div class="btn btn--orange btn--radius"><%= link_to "ルーム登録", :new_room %></div>
+ </div>
+</div>
